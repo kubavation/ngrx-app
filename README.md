@@ -1,2 +1,2 @@
 # ngrx-app
-Simple app using angular + ngrx
+Simple app using Angular + Ngrx
