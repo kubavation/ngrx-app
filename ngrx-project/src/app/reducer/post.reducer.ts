@@ -9,6 +9,7 @@ export const initialState: State = {
 };
 
 export function PostReducer(state = initialState, action: ActionParent) {
+    console.log('in post reducer')
     switch (action.type) {
         case PostActionTypes.ADD:
             return {
@@ -27,8 +28,8 @@ export function PostReducer(state = initialState, action: ActionParent) {
             };
         case PostActionTypes.FETCH:
             console.log('in fetch')
-            return state;
+            return state.posts;
         default:
-            return state;
+            return state.posts;
     }
 }

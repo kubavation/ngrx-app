@@ -12,12 +12,14 @@ import { FetchPosts } from 'src/app/actions/post.actions';
 })
 export class PostListComponent implements OnInit {
 
-  private posts$: Observable<Post[]>;
+  public posts$: Observable<Post[]>;
 
-  constructor(public store: Store<fromRoot.State>) { }
+  constructor(public store: Store<fromRoot.State>) {
+    this.posts$ = store.select(fromRoot.getPosts);
+   }
 
   ngOnInit() {
-    this.posts$ = this.store.select(fromRoot.getPosts);
+    console.log('here');
   }
 
 }
