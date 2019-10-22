@@ -7,4 +7,8 @@ export class AddPost implements ActionParent {
     constructor(public payload: Post) {}
 }
 
+export class FetchPosts implements ActionParent {
+    type = PostActionTypes.FETCH;
+    constructor(public payload: string) {}
+}
 //todo
