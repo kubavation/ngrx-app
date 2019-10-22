@@ -16,7 +16,7 @@ export class PostInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  onInputChange(value: string) {
+  onInputChange(value) {
     this.store.dispatch(new FetchPosts(value));
   }
 

@@ -26,6 +26,7 @@ export function PostReducer(state = initialState, action: ActionParent) {
                     state.posts.findIndex(p => p.id === action.payload.id), 1), action.payload]
             };
         case PostActionTypes.FETCH:
+            console.log('in fetch')
             return state;
         default:
             return state;
