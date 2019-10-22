@@ -25,6 +25,8 @@ export function PostReducer(state = initialState, action: ActionParent) {
                 posts: [...state.posts.splice(
                     state.posts.findIndex(p => p.id === action.payload.id), 1), action.payload]
             };
+        case PostActionTypes.FETCH:
+            return state;
         default:
             return state;
     }

@@ -1,4 +1,8 @@
+import { State } from './../../../reducer/state';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromRoot from '../../../reducer/state';
+import { FetchPosts } from 'src/app/actions/post.actions';
 
 @Component({
   selector: 'app-post-input',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostInputComponent implements OnInit {
 
-  constructor() { }
+  constructor(public store: Store<fromRoot.State>) { }
 
   ngOnInit() {
+  }
+
+  onInputChange(value: string) {
+    this.store.dispatch(new FetchPosts(value));
   }
 
 }
