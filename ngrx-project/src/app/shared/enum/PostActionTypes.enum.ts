@@ -2,5 +2,6 @@ export enum PostActionTypes {
     ADD = 'Add',
     REMOVE = 'Remove',
     UPDATE = 'Update',
-    FETCH = 'Fetch'
+    FETCH = 'Fetch',
+    UPDATED = 'Updated'
 }

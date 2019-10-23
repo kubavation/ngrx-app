@@ -22,4 +22,8 @@ export class UpdatePost implements ActionParent {
     type = PostActionTypes.UPDATE;
     constructor(public payload: Post) {}
 }
-//todo
+
+export class PostsUpdated implements ActionParent {
+    type = PostActionTypes.UPDATED;
+    constructor(public payload: Post[]) {}
+}
