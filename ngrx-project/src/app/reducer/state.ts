@@ -1,7 +1,14 @@
 import { Post } from 'src/app/model/Post';
 
-export interface State {
+
+export interface PostState {
     posts: Post[];
 }
 
-export const getPosts = (state: any) => state.postReducer.posts; //todo refactor multiple reducers
+export interface State {
+    //posts: Post[];
+    postState: PostState;
+}
+
+
+export const getPosts = (state: any) => { console.log(state.postReducer.posts); return state.postReducer.posts;} //todo refactor multiple reducers

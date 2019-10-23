@@ -3,9 +3,9 @@ import { ActionParent } from './../actions/action.parent';
 import { PostActionTypes } from './../shared/enum/PostActionTypes.enum';
 import { Post } from './../model/Post';
 
-export const initialState: State = {
-    posts: []
-};
+// export const initialState: State = {
+//     posts: []
+// };
 
 export function PostReducer(state = initialState, action: ActionParent) {
     switch (action.type) {
