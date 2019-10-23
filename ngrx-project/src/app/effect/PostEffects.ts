@@ -34,7 +34,7 @@ export class PostEffects {
     searchPosts$: Observable<Action> = this.actions$.pipe(
         ofType(PostActionTypes.SEARCH),
         tap(r => console.log('in search post effect ', r)),
-        debounceTime(800),
+        debounceTime(500),
         switchMap(
             (action: SearchPosts) => this.postService.findAll().pipe(
                 map(res => res.filter(p => p.title.includes(action.payload))),
