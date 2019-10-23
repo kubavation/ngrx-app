@@ -1,5 +1,5 @@
 import { State } from './state';
-import { AddPost } from './../actions/post.actions';
+import { AddPostAction } from './../actions/post.actions';
 import { ActionParent } from './../actions/action.parent';
 import { PostActionTypes } from './../shared/enum/PostActionTypes.enum';
 import { Post } from './../model/Post';

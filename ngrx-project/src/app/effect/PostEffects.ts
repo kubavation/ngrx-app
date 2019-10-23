@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Store, Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { switchMap, map, tap } from 'rxjs/operators';
+import { switchMap, map, tap, debounceTime } from 'rxjs/operators';
 
 @Injectable()
 export class PostEffects {
@@ -20,11 +20,13 @@ export class PostEffects {
 
     @Effect()
     loadPosts$: Observable<Action> = this.actions$.pipe(
+        debounceTime(800),
         tap(r => console.log('in load post effect ', r)),
         ofType(PostActionTypes.FETCH),
         switchMap(
             () => this.postService.findAll().pipe(
-                    map(result => new PostsUpdated(result)))
+                map(result => new PostsUpdated(result))
+            )
         )
     );
 
