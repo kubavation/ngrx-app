@@ -10,6 +10,10 @@ export class AddPost implements ActionParent {
 
 export class FetchPosts implements ActionParent {
     type = PostActionTypes.FETCH;
+}
+
+export class SearchPosts implements ActionParent {
+    type = PostActionTypes.SEARCH;
     constructor(public payload: string) {}
 }
 

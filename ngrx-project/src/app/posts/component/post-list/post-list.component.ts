@@ -21,7 +21,7 @@ export class PostListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.store.dispatch(new FetchPosts('*'));
+    this.store.dispatch(new FetchPosts());
   }
 
 }

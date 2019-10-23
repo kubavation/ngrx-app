@@ -1,3 +1,4 @@
+import { SearchPosts } from './../../../actions/post.actions';
 import { State } from './../../../reducer/state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -17,7 +18,7 @@ export class PostInputComponent implements OnInit {
   }
 
   onInputChange(value) {
-    this.store.dispatch(new FetchPosts(value));
+    this.store.dispatch(new SearchPosts(value));
   }
 
 }

@@ -20,9 +20,9 @@ export class PostEffects {
 
     @Effect()
     loadPosts$: Observable<Action> = this.actions$.pipe(
-        debounceTime(800),
         tap(r => console.log('in load post effect ', r)),
         ofType(PostActionTypes.FETCH),
+        debounceTime(800),
         switchMap(
             () => this.postService.findAll().pipe(
                 map(result => new PostsUpdated(result))

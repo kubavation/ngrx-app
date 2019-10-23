@@ -1,5 +1,4 @@
 import { State } from './state';
-import { AddPostAction } from './../actions/post.actions';
 import { ActionParent } from './../actions/action.parent';
 import { PostActionTypes } from './../shared/enum/PostActionTypes.enum';
 import { Post } from './../model/Post';
@@ -29,6 +28,9 @@ export function PostReducer(state = initialState, action: ActionParent) {
         case PostActionTypes.FETCH:
             console.log('in fetch')
             return state.posts;
+        case PostActionTypes.SEARCH:
+            console.log('in search');
+            return action.payload;
         case PostActionTypes.UPDATED:
             return action.payload;
         default:
