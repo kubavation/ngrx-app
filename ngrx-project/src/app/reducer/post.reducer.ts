@@ -29,6 +29,8 @@ export function PostReducer(state = initialState, action: ActionParent) {
         case PostActionTypes.FETCH:
             console.log('in fetch')
             return state.posts;
+        case PostActionTypes.UPDATED:
+            return action.payload;
         default:
             return state.posts;
     }
