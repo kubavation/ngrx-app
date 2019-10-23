@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../reducer/state';
 import { FetchPosts } from 'src/app/actions/post.actions';
 import { createAction } from '@ngrx/store';
+import { map, tap } from 'rxjs/operators';
 
 
 @Component({

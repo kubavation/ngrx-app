@@ -8,7 +8,6 @@ export const initialState: State = {
 };
 
 export function PostReducer(state = initialState, action: ActionParent) {
-    console.log('in post reducer')
     switch (action.type) {
         case PostActionTypes.ADD:
             return {
@@ -27,13 +26,24 @@ export function PostReducer(state = initialState, action: ActionParent) {
             };
         case PostActionTypes.FETCH:
             console.log('in fetch')
-            return state.posts;
+            console.log(state.posts)
+            //return state.posts;
+            return {
+                posts: [...state.posts]
+            };
         case PostActionTypes.SEARCH:
             console.log('in search');
-            return action.payload;
+            return {
+                posts: [...state.posts]
+            };
         case PostActionTypes.UPDATED:
-            return action.payload;
+            return {
+                posts: [...action.payload]
+            };
         default:
-            return state.posts;
+            console.log('in default')
+            return {
+                posts: [...state.posts]
+            };
     }
 }

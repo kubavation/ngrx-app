@@ -12,7 +12,7 @@ import { FetchPosts } from 'src/app/actions/post.actions';
 })
 export class PostInputComponent implements OnInit {
 
-  constructor(public store: Store<fromRoot.State>) { }
+  constructor(public store: Store<State>) { }
 
   ngOnInit() {
   }
