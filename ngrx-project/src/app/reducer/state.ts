@@ -11,4 +11,4 @@ export interface State {
 }
 
 
-export const getPosts = (state: any) => { console.log(state.postReducer.posts); return state.postReducer.posts;} //todo refactor multiple reducers
+export const getPosts = (state: State) => { console.log(state); return [];} //todo refactor multiple reducers

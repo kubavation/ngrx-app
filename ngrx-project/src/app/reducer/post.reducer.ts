@@ -7,34 +7,44 @@ import { Post } from './../model/Post';
 //     posts: []
 // };
 
+export const initialState: State = {
+    postState: {
+        posts: []
+    }
+};
+
 export function PostReducer(state = initialState, action: ActionParent) {
+
+    //const  = 
+    console.log('state')
+    console.log(state)
+
     switch (action.type) {
         case PostActionTypes.ADD:
             return {
-                posts: [...state.posts, action.payload]
+               // posts: [...state.posts, action.payload]
             };
         case PostActionTypes.REMOVE:
             return {
-                posts: [...state.posts.splice(
-                    state.posts.findIndex(p => p.id === action.payload), 1)
-                ]
+                // posts: [...state.posts.splice(
+                //     state.posts.findIndex(p => p.id === action.payload), 1)
+                // ]
             };
         case PostActionTypes.UPDATE:
             return {
-                posts: [...state.posts.splice(
-                    state.posts.findIndex(p => p.id === action.payload.id), 1), action.payload]
+                // posts: [...state.posts.splice(
+                //     state.posts.findIndex(p => p.id === action.payload.id), 1), action.payload]
             };
         case PostActionTypes.FETCH:
             console.log('in fetch')
-            console.log(state.posts)
             //return state.posts;
             return {
-                posts: [...state.posts]
+                //posts: [...state.posts]
             };
         case PostActionTypes.SEARCH:
             console.log('in search');
             return {
-                posts: [...state.posts]
+                //posts: [...state.posts]
             };
         case PostActionTypes.UPDATED:
             return {
@@ -43,7 +53,7 @@ export function PostReducer(state = initialState, action: ActionParent) {
         default:
             console.log('in default')
             return {
-                posts: [...state.posts]
+                posts: []//[...state.posts]
             };
     }
 }
