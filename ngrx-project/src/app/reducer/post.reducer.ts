@@ -44,7 +44,7 @@ export function PostReducer(state = initialState.postState, action: ActionParent
             };
         case PostActionTypes.ADD_SUCCESS:
             return {
-                posts: [...state.posts, action.payload]
+                posts: [action.payload, ...state.posts]
             };
         case PostActionTypes.ADD_FAILURE:
             return {
