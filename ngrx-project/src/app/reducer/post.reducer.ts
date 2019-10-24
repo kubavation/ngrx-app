@@ -42,6 +42,14 @@ export function PostReducer(state = initialState.postState, action: ActionParent
             return {
                 posts: [...action.payload]
             };
+        case PostActionTypes.ADD_SUCCESS:
+            return {
+                posts: [...state.posts, action.payload]
+            };
+        case PostActionTypes.ADD_FAILURE:
+            return {
+                posts: [...state.posts]
+            };
         default:
             console.log('in default')
             return {
