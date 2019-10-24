@@ -1,3 +1,4 @@
+import { getComments } from './../../../reducer/state';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
@@ -12,12 +13,11 @@ export class CommentsListComponent implements OnInit {
 
   private comments$: Observable<Comment[]>;
 
-  constructor(private store: Store<State>) { 
-    this.comments$ = store.select()
+  constructor(private store: Store<State>) {
+    this.comments$ = store.select(getComments);
   }
 
   ngOnInit() {
   }
-
 
 }
