@@ -1,3 +1,4 @@
+import { FindComments } from './../../../actions/comment.action';
 import { Post } from 'src/app/model/Post';
 import { Observable, from } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -23,6 +24,10 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new FetchPosts());
+  }
+
+  showComments(postId) {
+    this.store.dispatch(new FindComments(postId));
   }
 
 }

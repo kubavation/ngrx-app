@@ -12,7 +12,7 @@ export function CommentReducer(state = initialState.commentState, action: Action
             return {
                 comments: [...action.payload]
             };
-        default: 
+        default:
             return {
                 comments: [...state.comments]
             };
