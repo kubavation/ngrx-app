@@ -31,3 +31,12 @@ export class PostsUpdated implements ActionParent {
     type = PostActionTypes.UPDATED;
     constructor(public payload: Post[]) {}
 }
+
+export class PostsAddedSuccess implements ActionParent {
+    type = PostActionTypes.ADD_SUCCESS;
+    constructor(public payload: Post) {}
+}
+
+export class PostsAddedFailure implements ActionParent {
+    type = PostActionTypes.ADD_FAILURE;
+}

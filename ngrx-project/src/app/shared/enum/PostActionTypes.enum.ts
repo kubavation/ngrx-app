@@ -4,5 +4,7 @@ export enum PostActionTypes {
     UPDATE = 'Update',
     FETCH = 'Fetch',
     UPDATED = 'Updated',
-    SEARCH = 'Search'
+    SEARCH = 'Search',
+    ADD_SUCCESS = 'Add Success',
+    ADD_FAILURE = 'Add Failure'
 }

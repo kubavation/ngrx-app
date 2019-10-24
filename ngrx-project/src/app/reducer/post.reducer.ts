@@ -12,11 +12,11 @@ export const initialState: State = {
 export function PostReducer(state = initialState.postState, action: ActionParent): PostState {
 
     switch (action.type) {
-        case PostActionTypes.ADD:
-            console.log('in add type')
-            return {
-                posts: [...state.posts, action.payload]
-            };
+        // case PostActionTypes.ADD:
+        //     console.log('in add type')
+        //     return {
+        //         posts: [...state.posts, action.payload]
+        //     };
         case PostActionTypes.REMOVE:
             return {
                 posts: [...state.posts.splice(

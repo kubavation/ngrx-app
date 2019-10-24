@@ -1,4 +1,4 @@
-import { PostsUpdated, SearchPosts } from './../actions/post.actions';
+import { PostsUpdated, SearchPosts, AddPost } from './../actions/post.actions';
 import { Post } from './../model/Post';
 import { PostActionTypes } from './../shared/enum/PostActionTypes.enum';
 import { FetchPosts } from 'src/app/actions/post.actions';
@@ -43,6 +43,15 @@ export class PostEffects {
         )
     );
 
+    @Effect()
+    addPost$ = this.actions$.pipe(
+        ofType(PostActionTypes.ADD),
+        tap(r => console.log('in add post effect ', r)),
+        map(
+            (action: AddPost) => this.postService.create(action.payload)
+                .subscribe(res => console.log(res))
+        )
+    );
 
 }
 
