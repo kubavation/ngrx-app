@@ -1,3 +1,4 @@
+import { CommentsListComponent } from './actions/comments/component/comments-list/comments-list.component';
 import { CreatePostComponent } from './posts/component/create-post/create-post.component';
 import { PostInputComponent } from './posts/component/post-input/post-input.component';
 import { PostListComponent } from './posts/component/post-list/post-list.component';
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     PostListComponent,
     PostInputComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    CommentsListComponent
   ],
   imports: [
     BrowserModule,
