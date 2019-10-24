@@ -1,16 +1,19 @@
 import { PostState } from './state';
 import { Post } from 'src/app/model/Post';
 import { createSelector } from '@ngrx/store';
- 
-
+import { CommentStmt } from '@angular/compiler';
 
 export interface PostState {
     posts: Post[];
 }
 
+export interface CommentState {
+    comments: Comment[];
+}
+
 export interface State {
-    //posts: Post[];
     postState: PostState;
+    commentState: CommentState;
 }
 
 
