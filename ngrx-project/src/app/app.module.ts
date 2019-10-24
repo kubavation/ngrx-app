@@ -1,3 +1,4 @@
+import { CreatePostComponent } from './posts/component/create-post/create-post.component';
 import { PostInputComponent } from './posts/component/post-input/post-input.component';
 import { PostListComponent } from './posts/component/post-list/post-list.component';
 import { reducers } from './reducer/reducers';
@@ -10,17 +11,21 @@ import { PostReducer } from './reducer/post.reducer';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './effect/PostEffects';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostInputComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([PostEffects]),
   ],

@@ -1,3 +1,4 @@
+import { Post } from './../../model/Post';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -15,9 +16,9 @@ export class PostService {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-  // findAllByTitle(title): Observable<Post[]> {
-  //   return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
-  // }
+  //* todo komentarze pobierane po klikniecia na post ( w innym komponencie ) *//
 
-
+  create(post: Post) {
+    return this.http.post<Post>('https://jsonplaceholder.typicode.com/posts', post);
+  }
 }
