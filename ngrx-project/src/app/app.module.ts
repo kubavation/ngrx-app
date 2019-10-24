@@ -1,3 +1,4 @@
+import { CommentEffect } from './effect/CommentEffect';
 import { CommentsListComponent } from './comments/component/comments-list/comments-list.component';
 import { CreatePostComponent } from './posts/component/create-post/create-post.component';
 import { PostInputComponent } from './posts/component/post-input/post-input.component';
@@ -29,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([PostEffects]),
+    EffectsModule.forRoot([PostEffects, CommentEffect]),
   ],
   providers: [],
   bootstrap: [AppComponent]

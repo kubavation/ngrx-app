@@ -20,7 +20,7 @@ export class PostService {
   }
 
   findAllCommentsByPost(postId): Observable<Comment[]> {
-    return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments');
+    return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/comments?postId=' + postId);
   }
-  
+
 }
