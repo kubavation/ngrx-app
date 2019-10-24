@@ -3,6 +3,7 @@
   
     <div *ngFor="let post of posts$ | async" (click)="showComments(post.id)">
         {{post.title}}
+        <hr/>
     </div>
   
 </div>
