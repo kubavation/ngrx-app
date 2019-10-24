@@ -15,9 +15,11 @@ export class PostService {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
-  //* todo komentarze pobierane po klikniecia na post ( w innym komponencie ) *//
-
   create(post: Post) {
     return this.http.post<Post>('https://jsonplaceholder.typicode.com/posts', post);
+  }
+
+  findAllCommentsByPost(postId): Observable<Comment[]> {
+    return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/posts/' + postId + '/comments');
   }
 }
