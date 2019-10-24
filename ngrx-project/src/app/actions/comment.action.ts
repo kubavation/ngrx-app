@@ -9,7 +9,7 @@ export class FindComments implements ActionParent {
     constructor(public payload: number) {}
 }
 
-export class FindComments implements ActionParent {
-    type = CommentActionTypes.FIND;
-    constructor(public payload: number) {}
+export class FindCommentsSuccess implements ActionParent {
+    type = CommentActionTypes.FIND_SUCCESS;
+    constructor(public payload: Comment[]) {}
 }

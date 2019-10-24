@@ -6,6 +6,9 @@ import { Post } from './../model/Post';
 export const initialState: State = {
     postState: {
         posts: []
+    },
+    commentState: {
+        comments: []
     }
 };
 
