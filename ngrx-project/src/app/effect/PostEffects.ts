@@ -1,4 +1,4 @@
-import { PostsUpdated, SearchPosts, AddPost } from './../actions/post.actions';
+import { PostsUpdated, SearchPosts, AddPost, PostsAddedSuccess, PostsAddedFailure } from './../actions/post.actions';
 import { Post } from './../model/Post';
 import { PostActionTypes } from './../shared/enum/PostActionTypes.enum';
 import { FetchPosts } from 'src/app/actions/post.actions';
@@ -7,8 +7,8 @@ import { State } from './../reducer/state';
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Store, Action } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { switchMap, map, tap, debounceTime, filter } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { switchMap, map, tap, debounceTime, filter, mergeMap, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class PostEffects {
@@ -47,9 +47,12 @@ export class PostEffects {
     addPost$ = this.actions$.pipe(
         ofType(PostActionTypes.ADD),
         tap(r => console.log('in add post effect ', r)),
-        map(
-            (action: AddPost) => this.postService.create(action.payload)
-                .subscribe(res => console.log(res))
+        mergeMap(
+            (action: AddPost) => this.postService.create(action.payload).pipe(
+                map(result => new PostsAddedSuccess(result),
+                catchError((er) => of(new PostsAddedFailure()))
+            )
+          )
         )
     );
 
