@@ -13,6 +13,7 @@ export function PostReducer(state = initialState.postState, action: ActionParent
 
     switch (action.type) {
         case PostActionTypes.ADD:
+            console.log('in add type')
             return {
                 posts: [...state.posts, action.payload]
             };
