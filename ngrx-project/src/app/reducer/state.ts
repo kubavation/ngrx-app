@@ -16,4 +16,3 @@ export interface State {
 
 export const selectPostState = (state: State) => state.postState;
 export const getPosts = createSelector(selectPostState, (state) => { console.log(state); return state.posts });
-//export const getPosts = (state: PostState) => { console.log(state); return [];} //todo refactor multiple reducers
